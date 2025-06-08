@@ -2,7 +2,7 @@
   "name": "smart-code-reviewer",
   "displayName": "Smart Code Reviewer",
   "description": "Review selected code or tests with GitHub Copilot Chat using default/custom prompts.",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "publisher": "TharinduDeSilva",
   "icon": "media/smart-code-reviewer.png",
   "engines": { "vscode": "^1.85.0" },
