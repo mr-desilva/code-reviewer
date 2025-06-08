@@ -1,9 +1,10 @@
 {
-  "name": "code-reviewer",
-  "displayName": "Code Reviewer",
-  "description": "Review selected code with GitHub Copilot Chat using project guidelines.",
+  "name": "smart-code-reviewer",
+  "displayName": "Smart Code Reviewer",
+  "description": "Review selected code with GitHub Copilot Chat using default/custom prompts.",
   "version": "0.0.1",
-  "publisher": "your-name",
+  "publisher": "TharinduDeSilva",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -14,13 +15,38 @@
     "onCommand:code-reviewer.review"
   ],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mr-desilva/code-reviewer"
+  },
+  "homepage": "https://github.com/mr-desilva/code-reviewer",
+  "bugs": {
+    "url": "https://github.com/mr-desilva/code-reviewer/issues"
+  },
+  "files": [
+    "out/**",
+    "media/**",
+    "default-prompts/**",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "contributes": {
     "commands": [
       {
         "command": "code-reviewer.review",
-        "title": "Review with Copilot"
+        "title": "Run Smart Code Reviewer"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "code-reviewer.review",
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    },
     "configuration": {
       "type": "object",
       "title": "Code Reviewer Settings",
@@ -28,7 +54,7 @@
         "codeReviewer.guidelinesPath": {
           "type": "string",
           "default": "",
-          "description": "Absolute or workspace-relative path to a custom CODE_REVIEW_GUIDELINES.md file. Leave blank to use the built-in default.'"
+          "description": "Absolute or workspace-relative path to a custom CODE_REVIEW_GUIDELINES.md file. Leave blank to use the built-in default."
         }
       }
     }

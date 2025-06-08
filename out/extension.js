@@ -45,7 +45,7 @@ function activate(context) {
             }
             // 3) Fall back to built-in default if custom failed or blank
             if (!guidelines) {
-                const defaultMd = context.asAbsolutePath(path.join('media', 'CODE_REVIEW_GUIDELINES.md'));
+                const defaultMd = context.asAbsolutePath(path.join('default-prompts', 'CODE_REVIEW_GUIDELINES.md'));
                 try {
                     guidelines = yield fs_1.promises.readFile(defaultMd, 'utf8');
                 }

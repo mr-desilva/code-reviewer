@@ -46,7 +46,7 @@ export async function activate(context: vscode.ExtensionContext) {
       // 3) Fall back to built-in default if custom failed or blank
       if (!guidelines) {
         const defaultMd = context.asAbsolutePath(
-          path.join('media', 'CODE_REVIEW_GUIDELINES.md')
+          path.join('default-prompts', 'CODE_REVIEW_GUIDELINES.md')
         );
         try {
           guidelines = await fs.readFile(defaultMd, 'utf8');
