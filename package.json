@@ -1,7 +1,7 @@
 {
   "name": "smart-code-reviewer",
   "displayName": "Smart Code Reviewer",
-  "description": "Review selected code with GitHub Copilot Chat using default/custom prompts.",
+  "description": "Review selected code with GitHub Copilot Chat using default/custom prompts. This extension only supports angular projects at the moment.",
   "version": "0.0.1",
   "publisher": "TharinduDeSilva",
   "icon": "media/smart-code-reviewer.png",
