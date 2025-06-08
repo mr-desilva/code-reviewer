@@ -7,7 +7,9 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onCommand:code-reviewer.review"
   ],
@@ -18,15 +20,27 @@
         "command": "code-reviewer.review",
         "title": "Review with Copilot"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Code Reviewer Settings",
+      "properties": {
+        "codeReviewer.guidelinesPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute or workspace-relative path to a custom CODE_REVIEW_GUIDELINES.md file. Leave blank to use the built-in default.'"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./"
   },
   "devDependencies": {
+    "@types/node": "^22.15.30",
     "@types/vscode": "^1.85.0",
-    "typescript": "^4.9.5",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "typescript": "^4.9.5"
   }
 }
