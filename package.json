@@ -1,18 +1,15 @@
 {
   "name": "smart-code-reviewer",
   "displayName": "Smart Code Reviewer",
-  "description": "Review selected code with GitHub Copilot Chat using default/custom prompts. This extension only supports angular projects at the moment.",
-  "version": "0.0.1",
+  "description": "Review selected code or tests with GitHub Copilot Chat using default/custom prompts.",
+  "version": "0.0.2",
   "publisher": "TharinduDeSilva",
   "icon": "media/smart-code-reviewer.png",
-  "engines": {
-    "vscode": "^1.85.0"
-  },
-  "categories": [
-    "Other"
-  ],
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
   "activationEvents": [
-    "onCommand:code-reviewer.review"
+    "onCommand:code-reviewer.reviewCode",
+    "onCommand:code-reviewer.reviewTests"
   ],
   "main": "./out/extension.js",
   "repository": {
@@ -20,9 +17,7 @@
     "url": "https://github.com/mr-desilva/code-reviewer"
   },
   "homepage": "https://github.com/mr-desilva/code-reviewer",
-  "bugs": {
-    "url": "https://github.com/mr-desilva/code-reviewer/issues"
-  },
+  "bugs": { "url": "https://github.com/mr-desilva/code-reviewer/issues" },
   "files": [
     "out/**",
     "media/**",
@@ -34,17 +29,31 @@
   "contributes": {
     "commands": [
       {
-        "command": "code-reviewer.review",
-        "title": "Run Smart Code Reviewer"
+        "command": "code-reviewer.reviewCode",
+        "title": "Review Angular Code"
+      },
+      {
+        "command": "code-reviewer.reviewTests",
+        "title": "Review Jest Unit Tests"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "code-reviewer.runSmart",
+        "label": "Run Smart Code Reviewer"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "code-reviewer.review",
+          "submenu": "code-reviewer.runSmart",
           "when": "editorTextFocus && editorHasSelection",
           "group": "navigation"
         }
+      ],
+      "code-reviewer.runSmart": [
+        { "command": "code-reviewer.reviewCode", "group": "1_review" },
+        { "command": "code-reviewer.reviewTests", "group": "2_review" }
       ]
     },
     "configuration": {
@@ -54,7 +63,7 @@
         "codeReviewer.guidelinesPath": {
           "type": "string",
           "default": "",
-          "description": "Absolute or workspace-relative path to a custom CODE_REVIEW_GUIDELINES.md file. Leave blank to use the built-in default."
+          "description": "Absolute or workspace-relative path to a custom guidelines file. Leave blank to use the built-in default."
         }
       }
     }
