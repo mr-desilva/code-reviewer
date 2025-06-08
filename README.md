@@ -4,7 +4,7 @@ This repository contains a minimal VS Code extension that lets you highlight cod
 
 ## Usage
 1. Place your custom review guidelines in `CODE_REVIEW_GUIDELINES.md` at the root of your project.
-2. Run the command **Review with Copilot** from the command palette or the editor context menu after selecting some code.
+2. Run the command **Run Smart Code Reviewer** from the command palette or the editor context menu after selecting some code.
 3. GitHub Copilot Chat will open with the selected code and your guidelines included in the prompt.
 
 ## Development
