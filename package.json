@@ -4,7 +4,7 @@
   "description": "Review selected code with GitHub Copilot Chat using default/custom prompts.",
   "version": "0.0.1",
   "publisher": "TharinduDeSilva",
-  "icon": "media/icon.png",
+  "icon": "media/smart-code-reviewer.png",
   "engines": {
     "vscode": "^1.85.0"
   },
