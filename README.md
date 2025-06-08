@@ -1,11 +1,34 @@
-# Code Reviewer VS Code Extension
+# Smart Code Reviewer
+A VS Code extension that leverages GitHub Copilot to provide code reviews for Angular and Jest
 
-This repository contains a minimal VS Code extension that lets you highlight code and send it to GitHub Copilot Chat for review. The extension loads instructions from `CODE_REVIEW_GUIDELINES.md` in your workspace and prefaces the chat request with those guidelines.
+> **Note:** This extension currently supports only **Angular TypeScript** projects and those using the **Jest** unit-test framework.
 
-## Usage
-1. Place your custom review guidelines in `CODE_REVIEW_GUIDELINES.md` at the root of your project.
-2. Run the command **Run Smart Code Reviewer** from the command palette or the editor context menu after selecting some code.
-3. GitHub Copilot Chat will open with the selected code and your guidelines included in the prompt.
+---
 
-## Development
-Run `npm install` followed by `npm run compile` to build the extension.
+## Prerequisites
+
+- **Visual Studio Code**  
+- **GitHub Copilot** extension installed and enabled in VS Code
+
+---
+
+![A quick demo of Smart Code Reviewer](media/intro.gif)
+
+## Features
+
+- **Two review modes**  
+  - **Review Angular Code** – uses `angular_code_review_guidelines.md`  
+  - **Review Jest Unit Tests** – uses `jest_unit_test_code_review_guidelines.md`  
+- **Custom guidelines**  
+  Point to your own `CODE_REVIEW_GUIDELINES.md` via a workspace setting; otherwise falls back to the built-in defaults.  
+- **Context-menu integration**  
+  Right-click inside the editor when you have a selection to choose your review mode.  
+- **Command-palette support**  
+  Run either review command directly from the palette.
+
+---
+
+## Contact & Feedback
+
+- **GitHub**: [@mr-desilva](https://github.com/mr-desilva)  
+- **Issues & Requests**: [Submit here](https://github.com/mr-desilva/smart-code-reviewer/issues)
