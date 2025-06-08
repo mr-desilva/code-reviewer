@@ -1,0 +1,32 @@
+{
+  "name": "code-reviewer",
+  "displayName": "Code Reviewer",
+  "description": "Review selected code with GitHub Copilot Chat using project guidelines.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:code-reviewer.review"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-reviewer.review",
+        "title": "Review with Copilot"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^4.9.5",
+    "tslib": "^2.3.0"
+  }
+}
